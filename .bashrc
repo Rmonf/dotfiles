@@ -36,9 +36,11 @@ alias upclink="sudo openfortivpn myupclink.upc.edu:443 --saml-login"
 
 # Quickly update dotfiles
 dotfiles-upd() {
-    dotfiles add -u
-    dotfiles commit -m "update: $(date '+%Y-%m-%d %H:%M')"
-    dotfiles push
+    	dotfiles add -u
+    	dotfiles status	
+	read -p "Press Enter to commit, Ctrl+C to cancel"
+    	dotfiles commit -m "update: $(date '+%Y-%m-%d %H:%M')"
+    	dotfiles push
 }
 
 # Official function for yazi to drop you off at its latest terminal
