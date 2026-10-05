@@ -1,0 +1,62 @@
+[control_center]
+sidebar 	= "compact"
+width		= 700
+show_shortcut_labels = true
+show_session_labels  = true
+hidden_tabs	= [ "bluetooth", "power" ]
+
+[[control_center.shortcuts]]
+type = "wifi"
+
+[[control_center.shortcuts]]
+type = "system"
+
+[[control_center.shortcuts]]
+type = "caffeine"
+
+[[control_center.shortcuts]]
+type = "nightlight"
+
+[[control_center.shortcuts]]
+type = "wallpaper"
+
+[[control_center.shortcuts]]
+type = "session"
+
+[location]
+auto_locate	= false
+address		= "Martorell, Spain"
+
+[weather]
+enabled 	= true
+refresh_minutes = 30
+unit		= "metric"
+effects 	= true
+
+
+[wallpaper]
+directory = "/home/rmonf/Pictures/wallpapers"
+enabled		= true
+fill_mode	= "crop" # center | crop | fit | stretch | repeat | span
+transition          = ["fade", "wipe", "disc", "stripes", "zoom", "honeycomb"]
+transition_duration = 1500      # milliseconds
+edge_smoothness     = 0.3       # 0.0 – 1.0
+transition_on_startup = false   # animate the first wallpaper at shell startup (v4-style)
+
+[wallpaper.default]
+path = "/home/rmonf/Pictures/wallpapers/Blue,Orange.png"
+
+[wallpaper.last]
+path = "/home/rmonf/Pictures/wallpapers/Blue,Orange.png"
+
+
+[theme]
+mode		  = "dark"
+shell_mode	  = "follow"
+source		  = "wallpaper"
+builtin		  = "Noctalia"
+community_palette = "Catppuccin Mocha"
+wallpaper_scheme  = "m3-fruit-salad"
+
+[theme.templates]
+builtin_ids = [ "hyprland" ]

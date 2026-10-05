@@ -1,0 +1,95 @@
+[bar]
+order = ["topbar"]
+
+[bar.topbar]
+position	= "top"
+enabled		= true
+auto_hide	= false
+smart_auto_hide = false
+show_on_workspace_switch = true
+reserve_space 	= true
+layer		= "top"
+
+# Visuals
+thickness 	= 30
+background_opacity = 0.6
+border 		= "outline"
+border_width 	= 2.0
+shadow 		= true
+contact_shadow 	= false
+panel_overlap 	= 1
+radius		= 12
+radius_top_left = 12
+radius_top_right = 12
+radius_bottom_left = 12
+radius_bottom_right = 12
+concave_edge_corners = true
+margin_edge 	= 5
+margin_ends 	= 220
+margin_opposite_edge = 0
+padding 	= 10
+widget_spacing	= 6
+hover_highlight	= true
+scale		= 1.0
+font_scale	= 1.0
+font_weight	= 500
+font_family	= ""
+
+# Default capsule style for all widgets on this bar
+capsule 	= true
+capsule_opacity = 0.8
+capsule_thickness = 0.7
+
+start 		= [ "media_t", "audio_visualizer_t" ]
+center 		= [ "clock_dm", "workspaces_t", "clock" ]
+end 		= [ "notifications", "network_t", "volume", "brightness", "battery", "session" ]
+
+	[bar.topbar.dead_zone.actions]
+    	middle = "bar-toggle topbar"
+
+# -------------------- #
+# BAR-SPECIFIC WIDGETS #
+# -------------------- #
+
+# Only the overrides are present.
+# See https://docs.noctalia.dev/noctalia/bar/widgets/
+
+[widget.audio_visualizer_t]
+type 	= "audio_visualizer"
+bands 	= 7
+capsule = true
+capsule_opacity = 0.8
+capsule_padding = 0
+capsule_radius 	= "auto"
+show_when_idle 	= true
+width 	= 40
+
+[widget.media_t]
+type 	= "media"
+capsule_radius 	= "auto"
+max_length 	= 110
+
+[widget.workspaces_t]
+anchor	= true
+type 	= "workspaces"
+scale 	= 0.85
+show_labels  = false
+show_tooltip = false
+
+[widget.network_t]
+type 	   = "network"
+show_label = false
+
+[widget.clock_dm]
+type 	= "clock"
+format 	= "{:%d/%m}" 
+
+[widget.weather_t]
+type	= "weather"
+max_length       = 180
+show_condition   = true
+show_temperature = true
+
+[widget.biggap]
+type = "spacer"
+length = 48

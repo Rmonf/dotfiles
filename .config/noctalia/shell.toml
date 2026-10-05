@@ -1,0 +1,127 @@
+# See https://docs.noctalia.dev/noctalia/configuration/shell/#shell-settings
+
+[shell]
+corner_radius_scale   	= 1.0           # 0 = square, 1 = default, 2 = extra rounded
+button_borders        	= true          # draw outlines around buttons throughout the shell
+input_borders         	= true          # draw outlines around text fields and other inputs
+popup_borders         	= true          # draw outlines around popups and dropdowns (dialogs always have outlines)
+card_borders          	= true          # draw outlines around section cards inside panels and settings
+popup_shadows         	= true          # draw drop shadows behind popups and dropdowns
+font_family           	= ""  		# Pango family string; Fontconfig handles fallback
+lang                  	= ""            # empty = auto-detect; otherwise BCP-47 or POSIX locale
+time_format           	= "{:%H:%M}"    # default time format for shell UI without its own setting
+date_format           	= "%A, %x"      # default date format for shell UI without its own setting
+offline_mode          	= false         # block all outgoing HTTP requests
+# panel_anchor_bar   	= "main"        # bar panels attach to without a source bar; omit = first enabled bar
+external_ip_enabled   	= false         # resolve the WAN IP for the Control Center network tab and network widget tooltip
+telemetry_enabled     	= false         # anonymous startup ping
+setup_wizard_enabled 	= true          # open first-run wizard while the marker is missing
+polkit_agent          	= false         # register Noctalia's native polkit authentication agent
+password_style        	= "default"     # default | random
+avatar_path           	= "~/Pictures/avatar.png"
+settings_show_advanced 	= true          # show advanced settings by default in Settings
+settings_expand_all_groups = false      # expand every Settings group by default
+settings_window_translucent = false     # translucent Settings window background
+show_location         	= true          # show weather location text in shell UI
+launch_apps_as_systemd_services = false # launch apps as transient systemd services (needs Noctalia to be a user unit)
+launch_apps_custom_command = ""         # wrap launched apps; $CMD is replaced with the app command
+screen_time_enabled   	= false         # track per-app usage time for the Control Center screen-time view
+app_icon_colorize     	= false         # recolor application icons across the shell
+app_icon_color        	= "on_surface"  # ColorSpec when colorize is enabled; see App icon colorization below
+clipboard_enabled     	= true          # false disables clipboard history/panel (basic copy & paste still work)
+clipboard_keep_from_closed_apps = true  # keep the live selection after its source application closes
+clipboard_history_max_entries = 100     # unpinned history cap (10–10000); pinned entries are exempt
+clipboard_confirm_clear_history = true	# confirm before clear history / delete unpinned entries
+clipboard_auto_paste  	= "auto"        # off | auto | ctrl_v | ctrl_shift_v | shift_insert
+clipboard_image_action_command = ""     # image clipboard action; e.g. "gimp {path}" or "satty -f -"
+shared_gl_context     	= true          # startup-only; share GPU textures across surfaces
+disable_mipmaps       	= false         # startup-only; disable texture mipmaps if downscaled icons/wallpaper show GPU artifacts
+
+[shell.animation]
+enabled = true
+speed   = 1.0   # 1.0 = normal, 0.5 = 2× slower, 2.0 = 2× faster
+
+[shell.shadow]
+direction = "down"  # center, up, down, left, right, up_left, up_right, down_left, down_right
+alpha     = 0.55    # multiplied by each component's background opacity
+
+[shell.panel]
+transparency_mode     = "soft"  # solid | soft | glass; controls floating panel opacity and card translucency
+borders               = true   # outline on floating panel surfaces
+shadow                = true   # cast the global [shell.shadow] from panel surfaces
+list_item_background  = false  # filled rounded background behind launcher and clipboard list items
+floating_layer         = "overlay" # overlay | top; applies to floating interactive panels
+launcher_placement       = "floating" # attached | floating
+clipboard_placement      = "floating" # attached | floating
+control_center_placement = "attached" # attached | floating
+wallpaper_placement      = "attached" # attached | floating
+session_placement        = "attached" # attached | floating
+polkit_placement         = "floating" # attached | floating
+launcher_position        = "center"   # auto | center | top_left | … (floating only)
+clipboard_position       = "center"   # auto | center | top_left | … (floating only)
+polkit_position          = "center"   # auto | center | top_left | … (floating only)
+floating_offset          = 8           # px gap between a floating panel and the bar edge
+open_near_click_control_center = false  # attached/floating: follow the bar click instead of bar-center
+open_near_click_launcher       = false  # attached/floating: follow the bar click instead of bar-center
+open_near_click_clipboard      = false  # attached/floating: follow the bar click instead of bar-center
+open_near_click_wallpaper      = false  # attached/floating: follow the bar click instead of bar-center
+open_near_click_session        = false  # attached/floating: follow the bar click instead of bar-center
+
+
+[shell.window_switcher]
+style = "carousel"              # "carousel" (freestanding depth layout) or "compact" (boxed strip)
+mru = false                     # order windows by most recently used (Alt+Tab) instead of workspace layout
+show_caption = true             # show window titles and application names below previews
+show_count = true               # show the current and total window count above the previews
+show_app_icon = true            # show application icons over window previews
+show_all_outputs = true         # list windows from every monitor; false = only the monitor showing the switcher
+current_workspace_only = false  # list only the windows of the workspace shown on each monitor; false = windows from every workspace
+
+[shell.screenshot]
+save_to_file         = true                       # write captures as PNG to the output directory
+directory            = ""                          # output folder; empty = XDG_PICTURES_DIR or ~/Pictures
+filename_pattern     = ""                          # empty = screenshot_%Y%m%d_%H%M%S
+copy_to_clipboard    = true                        # also place the PNG on the clipboard
+freeze_screen        = true                        # freeze the desktop before region selection
+confirm_region       = false                       # confirm region captures with Enter or Space
+remember_last_region = false                       # pre-select the last region (also after cancel)
+show_cursor          = false                       # include the mouse pointer in captures
+annotate             = false                       # open the annotator before saving or copying
+skip_annotate_on_copy_save = false                 # region overlay Copy/Save deliver without the annotator
+close_on_copy        = true                        # close the annotation editor after a successful Copy
+close_on_save        = true                        # close the annotation editor after a successful Save
+pipe_to_command      = false                       # pipe the PNG to a shell command on stdin
+pipe_command         = ""                          # annotator/uploader, e.g. "swappy -f -" or "satty -f -"
+
+
+[osd]
+position = "top_right"  # top_right | top_left | top_center | bottom_right | bottom_left | bottom_center | center_right | center_left
+position_vertical = "top_center"  # same options; used when orientation = "vertical"
+orientation = "horizontal" # horizontal | vertical (volume/brightness sliders only)
+#hide_delay_ms = 1400     # time before a popup starts hiding; range 250 to 10000 ms
+scale = 1.0              # OSD size multiplier on top of shell.ui_scale
+background_opacity = 0.8 # background opacity of OSD popups
+border = true            # outline around OSD popup cards; set false for a borderless look
+#border_color = "outline" # outline color: theme color role (e.g. "primary") or hex (e.g. "#a8b185")
+#border_width = 1         # outline stroke width in px; raise for a thicker outline
+#follow_focused_output = false # show a new OSD on the focused output; keep it pinned until it disappears
+offset_x = 220            # absolute horizontal margin from the screen edge
+offset_y = 8             # absolute vertical margin from the screen edge
+# monitors = ["DP-1"]    # connector names; omit or leave empty for all monitors
+
+[osd.kinds]
+volume = true            # master volume OSD toggle
+volume_output = true     # output (speaker) volume; requires volume = true
+volume_input = true      # input (microphone) volume; requires volume = true
+brightness = true        # display brightness
+wifi = true              # Wi-Fi toggle
+bluetooth = true         # Bluetooth toggle
+power_profile = true     # power profile changes
+caffeine = true          # idle inhibitor toggle
+nightlight = true        # night light toggle
+dnd = true               # Do Not Disturb toggle
+lock_keys = false         # Caps/Num/Scroll Lock popups
+keyboard_layout = true   # input keyboard layout changes
+media = true             # MPRIS playback, track changes, and per-player volume changes
+privacy = true           # microphone/camera/screen share capture changes
+keyboard_backlight = true # keyboard backlight level

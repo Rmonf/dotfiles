@@ -1,0 +1,21 @@
+max-history=5
+sort=-time
+
+#Bindings
+
+on-button-left=invoke-default-action
+on-button-middle=dismiss
+on-button-right=dismiss
+
+#Style
+
+font=Noto Sans 11
+background-color=#1e1e2e
+text-color=#cde1f4
+border-color=#89e3fa
+border-size=2
+border-radius=8
+default-timeout=5000
+margin=10
+padding=12
+

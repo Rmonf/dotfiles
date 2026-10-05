@@ -1,0 +1,5 @@
+[Default Applications]
+image/tiff=vivaldi-stable.desktop
+
+[Added Associations]
+image/tiff=vivaldi-stable.desktop;
