@@ -28,6 +28,8 @@ fi
 # Shortcut to dotfiles repo
 alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'		
 
+# Connect to UPClink via openfortivpn. Needs sudo
+alias upclink="sudo openfortivpn myupclink.upc.edu:443 --saml-login"
 
 #  FUNCTIONS  #
 ###############
