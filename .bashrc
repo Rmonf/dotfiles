@@ -12,6 +12,7 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
+
 #  LOAD FILES  #
 ################
 
@@ -20,13 +21,24 @@ if [ -f ~/.bashrc_secret ]; then
     source ~/.bashrc_secret
 fi
 
+
 #  ALIASES  #
 #############
 
-alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'		# Shortcut to dotfiles repo
+# Shortcut to dotfiles repo
+alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'		
+
 
 #  FUNCTIONS  #
 ###############
+
+# Quickly update dotfiles
+
+dotfiles-upd() {
+    dotfiles add -u
+    dotfiles commit -m "update: $(date '+%Y-%m-%d %H:%M')"
+    dotfiles push
+}
 
 # Official function for yazi to drop you off at its latest terminal
 function y() {
