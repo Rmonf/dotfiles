@@ -33,7 +33,6 @@ alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 ###############
 
 # Quickly update dotfiles
-
 dotfiles-upd() {
     dotfiles add -u
     dotfiles commit -m "update: $(date '+%Y-%m-%d %H:%M')"
