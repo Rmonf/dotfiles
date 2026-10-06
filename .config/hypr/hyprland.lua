@@ -6,7 +6,7 @@ require("ui")
 require("start")
 require("keybinds")
 require("workspaces")
-require("eyecandy")
+require("visuals")
 require("misc")
 
 -- For Noctalia Color templates
