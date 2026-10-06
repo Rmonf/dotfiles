@@ -6,6 +6,17 @@
 
 
 
+-- Set obsidian's configuration window as a floating window
+hl.window_rule({
+	name = "obsidian-floating-config",
+	match = {
+		class	= "md.obsidian.Obsidian",
+		title	= ".*(Settings|Community themes).*"
+		},
+	float = true,
+})
+
+
 -- Example window rules that are useful
 
 local suppressMaximizeRule = hl.window_rule({
