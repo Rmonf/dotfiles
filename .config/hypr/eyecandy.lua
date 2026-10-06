@@ -55,6 +55,7 @@ hl.config({
 ----------------
 
 -- Default curves and animations, see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/
+
 hl.curve("easeOutQuint",   { type = "bezier", points = { {0.23, 1},    {0.32, 1}    } })
 hl.curve("easeInOutCubic", { type = "bezier", points = { {0.65, 0.05}, {0.36, 1}    } })
 hl.curve("linear",         { type = "bezier", points = { {0, 0},       {1, 1}       } })
@@ -82,7 +83,8 @@ hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 1.21, bezier = "
 hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "fade" })
 hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "quick" })
 
--- Cosmetic Rules --
---------------------
+-- Cosmetic Window Rules --
+---------------------------
 
-hl.window_rule({ match = { class = "kitty" },        opacity = "0.85 0.85" })
+hl.window_rule({ match = { class = "kitty" },	opacity = "0.85 0.85" })
+hl.window_rule({ match = { class = "yazi" },	opacity = "0.95 0.95" })
