@@ -8,7 +8,7 @@
 
 -- Set obsidian's configuration window as a floating window
 hl.window_rule({
-	name = "obsidian-floating-config",
+	name = "obsidian_floating_config",
 	match = {
 		class	= "md.obsidian.Obsidian",
 		title	= ".*(Settings|Community themes).*"
@@ -16,6 +16,15 @@ hl.window_rule({
 	float = true,
 })
 
+-- Set vivaldi's config window as a floating window
+hl.window_rule({
+        name = "vivaldi_config_floating",
+        match = {
+                class   = "vivaldi-stable",
+                title   = ".*Settings.*"
+                },
+        float = true,
+})
 
 -- Example window rules that are useful
 
