@@ -107,7 +107,8 @@ hl.bind("CTRL + " .. mainMod .. " + left", hl.dsp.focus({ workspace = "-1" }))
 hl.bind("CTRL + " .. mainMod .. " + right", hl.dsp.focus({ workspace = "+1" }))
 
 -- Special workspace / scratchpad
-hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("magic"))
+hl.bind(mainMod .. " + S",         	hl.dsp.workspace.toggle_special("magic"))
+hl.bind(mainMod .. " + CTRL + down",    hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mainMod .. " + SHIFT + mouse:274", hl.dsp.window.move({ workspace = "special:magic" }))
 
 
