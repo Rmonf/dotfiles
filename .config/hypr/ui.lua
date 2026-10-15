@@ -26,6 +26,13 @@ hl.window_rule({
         float = true,
 })
 
+hl.window_rule({
+	name = "thunar_always_float",
+	match = { class = "thunar" },
+	float = true,
+	size = {1000, 700},
+})
+
 -- Example window rules that are useful
 
 local suppressMaximizeRule = hl.window_rule({

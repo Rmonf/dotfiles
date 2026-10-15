@@ -93,8 +93,9 @@ hl.window_rule({ match = { class = "yazi" },			opacity = "0.95 0.95" })
 hl.window_rule({ match = { class = "md.obsidian.Obsidian" },	opacity = "1.00 1.15" })
 hl.window_rule({ match = { class = "vivaldi-stable" },		opacity = "1.00 1.10" })
 hl.window_rule({ match = { class = "code-oss" },		opacity = "1.00 1.15" })
-hl.window_rule({ match = { class = "thunar" },			opacity = "0.95 0.98" })
+hl.window_rule({ match = { class = "thunar" },			opacity = "0.85 0.70" })
+
 hl.window_rule({ match = { class = "xdg-desktop-portal-gtk",
-			   title = "(.*Open.*|.*Files.*)" },	opacity = "0.95 0.98" })
+			   title = "(.*Open.*|.*Files.*)" },	opacity = "0.85 0.90" })
 hl.window_rule({ match = { class = "vivaldi-stable",
-                           title = ".*Settings.*" },    	opacity = "0.9 0.9" })
+                           title = ".*Settings.*" },    	opacity = "0.90 0.90" })
