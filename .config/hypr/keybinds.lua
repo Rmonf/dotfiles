@@ -55,7 +55,7 @@ hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 -- Noctalia components --
 -------------------------
 
-hl.bind("CTRL + " .. mainMod .. " + SPACE", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))	-- Launcher
+hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))			-- Launcher
 hl.bind(mainMod .. "+ H", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center"))			-- Control center (Home)
 hl.bind(mainMod .. "+ comma", hl.dsp.exec_cmd("noctalia msg settings-toggle"))				-- Settings
 hl.bind("ALT + Tab", hl.dsp.exec_cmd("noctalia msg window-switcher hold"))				-- Window switcher
