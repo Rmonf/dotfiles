@@ -1,7 +1,9 @@
 [Default Applications]
 image/tiff=vivaldi-stable.desktop
 application/pdf=vivaldi-stable.desktop
+application/x-zerosize=code-oss.desktop
 
 [Added Associations]
 image/tiff=vivaldi-stable.desktop;
 application/pdf=vivaldi-stable.desktop;
+application/x-zerosize=code-oss.desktop;

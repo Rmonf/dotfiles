@@ -16,11 +16,14 @@ PS1='[\u@\h \W]\$ '
 #  LOAD FILES  #
 ################
 
-# Add .bashrc_secret if existent
-if [ -f ~/.bashrc_secret ]; then
-    source ~/.bashrc_secret
+# Add secret.sh if existent
+if [ -f ~/.config/shell/secret.sh ]; then
+    source ~/.config/shell/secret.sh
 fi
-
+# Add environment.sh if existent
+if [ -f ~/.config/shell/environment.sh ]; then
+    source ~/.config/shell/environment.sh
+fi
 
 #  ALIASES  #
 #############
