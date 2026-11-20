@@ -5,17 +5,6 @@
 -- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/
 
 
-
--- Set obsidian's configuration window as a floating window
-hl.window_rule({
-	name = "obsidian_floating_config",
-	match = {
-		class	= "md.obsidian.Obsidian",
-		title	= ".*(Settings|Community themes).*"
-		},
-	float = true,
-})
-
 -- Set vivaldi's config window as a floating window
 hl.window_rule({
         name = "vivaldi_config_floating",
@@ -26,9 +15,10 @@ hl.window_rule({
         float = true,
 })
 
+-- Set thunar as a floating window
 hl.window_rule({
 	name = "thunar_always_float",
-	match = { class = "thunar" },
+	match = { class = "thunar|Thunar" },
 	float = true,
 	size = {1000, 700},
 })
@@ -142,3 +132,18 @@ hl.config({
         fullscreen_on_one_column = true,
     },
 })
+
+
+
+-- Old app / legacy unused rules --
+-----------------------------------
+-- Set obsidian's configuration window as a floating window
+--hl.window_rule({
+--	name = "obsidian_floating_config",
+--	match = {
+--		class	= "md.obsidian.Obsidian",
+--		title	= ".*(Settings|Community themes).*"
+--		},
+--	float = true,
+--})
+

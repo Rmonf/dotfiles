@@ -7,7 +7,6 @@ local terminal    = "kitty"
 local fileManager_tui = "kitty --class yazi -e yazi"                -- Passing --class yazi makes it so this terminal window is treated as a unique type
 local fileManager_gui = "uwsm app -- thunar"
 local browser = "uwsm app -- vivaldi"
-local notesapp = "uwsm app -- obsidian"
 local ide = "uwsm app -- code"
 ---------------------
 ---- KEYBINDINGS ----
@@ -81,12 +80,19 @@ hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-")
 ---------------
 
 hl.bind(mainMod .. " + Q", 		hl.dsp.exec_cmd(terminal))		-- Open the terminal 			(kitty)
+hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exec_cmd(terminal, {
+    float = true,
+    move  = { "cursor_x-(window_w*0.5)", "cursor_y-(window_h*0.5)" },
+    size  = { 900, 600 },
+}))										-- Open the terminal as a floating window (@cursor)
+
 hl.bind(mainMod .. " + A", 		hl.dsp.exec_cmd(fileManager_tui))	-- Open the default file explorer 	(yazi)
 hl.bind(mainMod .. " + SHIFT + A", 	hl.dsp.exec_cmd(fileManager_gui)) 	-- Open the GUI file manager 		(thunar via uwsm)
 hl.bind(mainMod .. " + W", 		hl.dsp.exec_cmd(browser))		-- Open the default browser 		(vivaldi via uwsm)
 hl.bind(mainMod .. " + D", 		hl.dsp.exec_cmd("uwsm app -- discord"))	-- Open Discord via uwsm
-hl.bind(mainMod .. " + SHIFT + E", 	hl.dsp.exec_cmd(notesapp))		-- Open the default notes app 		(obsidian via uwsm)
 hl.bind(mainMod .. " + E",		hl.dsp.exec_cmd(ide))			-- Open the default ide 		(code via uwsm)
+hl.bind(mainMod .. " + SHIFT + E",	hl.dsp.exec_cmd("uwsm app -- t3code"))	-- Open T3-code via uwsm 		(desktop app)
+
 
 
 -- Workspace binds --

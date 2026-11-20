@@ -2,6 +2,8 @@
 image/tiff=vivaldi-stable.desktop
 application/pdf=vivaldi-stable.desktop
 application/x-zerosize=code-oss.desktop
+x-scheme-handler/claude-cli=claude-code-url-handler.desktop
+x-scheme-handler/t3code=com.t3tools.T3Code.desktop
 
 [Added Associations]
 image/tiff=vivaldi-stable.desktop;
